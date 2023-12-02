@@ -3,6 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
+  win.loadFile('index.html')
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
