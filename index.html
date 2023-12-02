@@ -42,28 +42,11 @@
     </form>
 
     <ul id="searchResults"></ul>
-
-    <script>
-      function search() {
-        const searchTerm = document.getElementById('searchInput').value;
-        // Perform search logic based on the searchTerm
-  
-        // For example, display search results in a list
-        const searchResultsElement = document.getElementById('searchResults');
-        searchResultsElement.innerHTML = '';
-        // Dummy data for illustration
-        for (let i = 0; i < 5; i++) {
-          const li = document.createElement('li');
-          li.textContent = `Search Result ${i + 1} for "${searchTerm}"`;
-          searchResultsElement.appendChild(li);
-        }
-      }
-    </script>
     
     <table border="1">
       <thead>
         <tr>
-          <th>Sensor Names</th>
+          <th>Sensor Name</th>
           <th>Rate</th>
           <th>Position</th>
           <th>Channel</th>
@@ -72,9 +55,10 @@
           <th>Offset</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Sensor CAN ID</td>
+      <tbody id="sensorTableBody"></tbody>
+      <!-- <tbody>
+       <tr> -->
+          <!-- <td>Sensor CAN ID</td>
           <td>50</td>
           <td>0 - 1</td>
           <td>RPM</td>
@@ -82,9 +66,10 @@
           <td>y = x</td>
           <td>Off</td>
         </tr>
-        <!-- Add more rows as needed -->
-      </tbody>
+        Add more rows as needed -->
+      <!-- </tbody> -->
     </table>
+    <script src="main.js"></script>
     <img src="ImagesTelemetry\NavyaNoodles.jpg" alt="Navya Noodles" width="300" height="200">
   </body>
 </html>
