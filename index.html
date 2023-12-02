@@ -1,15 +1,90 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      body {
+        background-color: #202124; /* Change to your desired color */
+      }
+      h1.sensors {
+        color: white;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+        color: white;
+        
+      }
+      th {
+        background-color: #333232;
+      }
+    </style>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <!-- <h1>Hello World!</h1>
     We are using Node.js <span id="node-version"></span>,
     Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    and Electron <span id="electron-version"></span>. -->
+    
+    <h1 class="sensors">Sensors</h1>
+
+    <form>
+      <input type="text" id="searchInput" placeholder="Search...">
+    <button type="button" onclick="search()">Search</button>
+    </form>
+
+    <ul id="searchResults"></ul>
+
+    <script>
+      function search() {
+        const searchTerm = document.getElementById('searchInput').value;
+        // Perform search logic based on the searchTerm
+  
+        // For example, display search results in a list
+        const searchResultsElement = document.getElementById('searchResults');
+        searchResultsElement.innerHTML = '';
+        // Dummy data for illustration
+        for (let i = 0; i < 5; i++) {
+          const li = document.createElement('li');
+          li.textContent = `Search Result ${i + 1} for "${searchTerm}"`;
+          searchResultsElement.appendChild(li);
+        }
+      }
+    </script>
+    
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Sensor Names</th>
+          <th>Rate</th>
+          <th>Position</th>
+          <th>Channel</th>
+          <th>Units</th>
+          <th>Equation</th>
+          <th>Offset</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sensor CAN ID</td>
+          <td>50</td>
+          <td>0 - 1</td>
+          <td>RPM</td>
+          <td>RPM</td>
+          <td>y = x</td>
+          <td>Off</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+    <img src="ImagesTelemetry\NavyaNoodles.jpg" alt="Navya Noodles" width="300" height="200">
   </body>
 </html>
